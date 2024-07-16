@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Practice Slider</title>
+<script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
+</head>
+<body>
+      <button id="color-button"  onclick="sample()">Display color picker</button>
+<div id="color-circle"> </div>
+<div id="color-code"> </div>
+</body>
+<script>
+let colors=  document.getElementById('color-code');
+ const sample= ()=>{
+ var colorPicker = new iro.ColorPicker('#color-circle', {
+   // Set the size of the color picker
+   width: 320,
+   // Set the initial color to pure red
+   color:"#ff0000"
+ });
+ colorPicker.on(['color:change', 'color:init'], function(color) {
+  // log the current color as a HEX string
+   colors.innerHTML=color.hexString;
+ });
+};
+</script>
+</html>
